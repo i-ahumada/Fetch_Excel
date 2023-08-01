@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title> Fetch Google Spreadsheet </title>
+		<link rel="stylesheet" href="./src/css/style.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	</head>
+	<body>
+		<div id="menu">
+			<div id="menu-toggle">
+				<i class="fa fa-arrow-left"></i>
+			</div>
+			<ul id="menu-list">
+				<li class="menu-item">
+					<div class="checkbox-filter" id="filter"></div>
+					<p>Filter undefined</p>
+					<i title="Replaces undefined cells with empty cells" class="fa-solid fa-circle-question"></i>
+				</li>
+				<li class="menu-item">
+					<div class="checkbox-filter"></div>
+					<p>Filter no-header columns</p>
+					<i title="Filters columns with no labels on the first row" class="fa-solid fa-circle-question"></i>
+				</li>
+				<li class="menu-item">
+					<div class="checkbox-filter"></div>
+					<p>Filter empty rows</p>
+					<i title="Filters rows with no values" class="fa-solid fa-circle-question"></i>
+				</li>
+				<li class="menu-item">
+					<div class="checkbox-filter"></div>
+					<p>Filter empty rows</p>
+					<i title="Filters columns with no values" class="fa-solid fa-circle-question"></i>
+				</li>
+			</ul>
+		</div>
+		<div class="group">
+			<form action="#" method="get">
+				<input type="text" name="spreadSheetId" id="spreadSheetId" placeholder="Enter your Google spreadsheet Id">
+				<input type="submit" value="Submit" id="submitSpreadSheetId">
+			</form>
+			<table id="tabla">
+			</table>
+		</div>
+		<script type="module" src="./src/js/tableGen.js"></script>
+		<script type="module" src="./src/js/ui.js"></script>
+	</body>
+</html>
