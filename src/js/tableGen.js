@@ -14,7 +14,7 @@ const getHorasData = async (spreadsheetId, table) => {
 		console.log(data)
 		// MAKE TABLE	
 		table.innerHTML = '';
-		let arrColIngores = [];
+		// let arrColIngores = [];
 		// Headers
 		/**
 		 * @param {HTMLElement} table 
@@ -23,14 +23,14 @@ const getHorasData = async (spreadsheetId, table) => {
 			let colCounter = 0;
 			const row = document.createElement("tr");
 			data.table.cols.forEach((col) => {
-				if(col.label !== '') {
-					const header = document.createElement("th");
-					header.innerText = col.label;
-					row.appendChild(header);
-				} else { 
-					arrColIngores.push(colCounter);
-				}
-				colCounter++;
+				const header = document.createElement("th");
+				header.innerText = col.label;
+				row.appendChild(header);
+				// if(col.label !== '') {
+				// } else { 
+				// 	arrColIngores.push(colCounter);
+				// }
+				// colCounter++;
 			});
 			table.appendChild(row);
 		}
@@ -44,12 +44,12 @@ const getHorasData = async (spreadsheetId, table) => {
 				const row = document.createElement("tr");
 				let colCounter = 0;
 				cells.c.forEach((cell) => {
-					if (!arrColIngores.includes(colCounter)) {
-						const dataCell = document.createElement("td");
-						dataCell.innerText = cell?.v === undefined? '': cell.v;
-						row.appendChild(dataCell);
-					}
-					colCounter++;
+					const dataCell = document.createElement("td");
+					dataCell.innerText = cell?.v === undefined? '': cell.v;
+					row.appendChild(dataCell);
+					// if (!arrColIngores.includes(colCounter)) {
+					// }
+					// colCounter++;
 				})
 				table.appendChild(row)
 			})
